@@ -33,7 +33,7 @@ PUZZLE_FILE="Dataset.txt"
 EXAMPLE_DATA_URL="https://adventofcode.com/${YEAR}/day/${DAY_NO_ZEROS}"
 
 #Session token from AOC in AOC_TOKEN needed
-curl "${PUZZLE_URL}" -H "cookie: ${AOC_TOKEN}" -o "${PUZZLE_FILE}" 2>/dev/null
+curl https://adventofcode.com/2024/day/6/input -H "cookie: ${AOC_TOKEN}" -o "${PUZZLE_FILE}" 2>/dev/null
 result="$(curl "${EXAMPLE_DATA_URL}")"
 
 parsedResult=`<<< $result sed -e 's/.*<pre><code>\(.*\)<\/code><\/pre>.*/\1/'`
